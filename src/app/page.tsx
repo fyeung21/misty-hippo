@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Card from "@/components/card";
 
 export default function Home() {
   return (
@@ -9,9 +9,9 @@ export default function Home() {
       <main>
         <p>call list of anime here</p>
         <section className="grid">
-          <article>card</article>
-          <article>card</article>
-          <article>card</article>
+          <Card />
+          <Card />
+          <Card />
         </section>
       </main>
       <footer>footer</footer>
