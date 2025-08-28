@@ -16,15 +16,15 @@ export default function Card() {
             priority
           />
         </section>
-        <section className="group relative flex-col justify-between">
-          <article className="hidden group-hover:block w-40">
+        <section className="group relative flex-col justify-between p-3">
+          <article className="hidden group-hover:block w-41">
             <p>
               description Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-              as opposed to using 'Content here, content here'
+              as opposed to using "Content here, content
             </p>
           </article>
           <article className="group-hover:hidden">
-            <ul className="pb-23">
+            <ul className="pb-20">
               <li className="text-sm">
                 <p>{"12"} episodes airing in</p>
               </li>
