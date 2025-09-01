@@ -2,20 +2,25 @@ import Image from "next/image";
 
 export default function Single() {
   return (
-    <section className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <h2>name of anime</h2>
-      <Image
-        className="dark:invert"
-        src="/next.svg"
-        alt="Next.js logo"
-        width={280}
-        height={400}
-        priority
-      />
+    <section className="min-h-screen p-8 pb-20 gap-16">
+      {/* name of anime */}
+      <h2 className="my-8 text-3xl">name of anime</h2>
 
+      {/* main image */}
       <section>
-        <button className="bg-pink-400">faves</button>
-        <article>
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={280}
+          height={400}
+          priority
+        />
+      </section>
+
+      {/* anime details */}
+      <section>
+        <article className="flex justify-between my-8">
           <ul>
             <li>
               <p>{"12"} episodes airing in</p>
@@ -27,15 +32,22 @@ export default function Single() {
               <p>by {"name of studio"}</p>
             </li>
           </ul>
+
+          {/* favourites button */}
+          <button className="bg-pink-400">faves</button>
         </article>
-        <article>
+        <article className="my-8">
           <p>
             description Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-            opposed to using "Content here, content
+            opposed to using "Content here, content here", making it look like readable English.
+            Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+            default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+            their infancy. Various versions have evolved over the years, sometimes by accident,
+            sometimes on purpose (injected humour and the like).
           </p>
         </article>
         <article>
-          <ul>
+          <ul className="flex space-x-2">
             <li className="bg-yellow-400">adventure</li>
             <li className="bg-yellow-400">fantasy</li>
           </ul>
