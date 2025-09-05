@@ -26,10 +26,12 @@ export default function Single() {
               <p>{"12"} episodes airing in</p>
             </li>
             <li>
-              <p>October 21, 2025</p>
+              <p className="text-xl">October 21, 2025</p>
             </li>
             <li>
-              <p>by {"name of studio"}</p>
+              <p>
+                by <span className="text-blue-500">{"name of studio"}</span>
+              </p>
             </li>
           </ul>
 
