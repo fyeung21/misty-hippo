@@ -8,7 +8,7 @@ export default function Home() {
       </header>
       <main>
         <p>call list of anime here</p>
-        <section className="grid">
+        <section className="grid sm:grid-cols-2 sm:gap-4">
           <Card />
           <Card />
           <Card />

@@ -35,11 +35,13 @@ export default function Card() {
               <li className="text-sm">
                 <p>{"12"} episodes airing in</p>
               </li>
-              <li className="text-2xl">
+              <li className="text-xl">
                 <p>October 21, 2025</p>
               </li>
               <li>
-                <p>by {"name of studio"}</p>
+                <p>
+                  by <span className="text-blue-500">{"name of studio"}</span>
+                </p>
               </li>
             </ul>
           </article>
