@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <section className="font-sans min-h-screen m-8 sm:m-20">
+        <section className="font-sans min-h-screen m-8 sm:m-20 xl:mx-30">
           <header>
             <nav>this will be navigation</nav>
           </header>
