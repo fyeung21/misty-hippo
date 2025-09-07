@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Single() {
   return (
-    <section className="min-h-screen p-8 pb-20 gap-16">
+    <section className="">
       {/* name of anime */}
       <h2 className="my-8 text-3xl">name of anime</h2>
 
