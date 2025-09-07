@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Card() {
   return (
-    <div className="my-8">
+    <section>
       <h2 className="text-2xl">name of anime</h2>
 
       {/* entire card */}
@@ -56,6 +56,6 @@ export default function Card() {
           </article>
         </section>
       </article>
-    </div>
+    </section>
   );
 }
