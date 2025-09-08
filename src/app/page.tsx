@@ -1,4 +1,5 @@
 import Card from "@/components/card";
+import Season from "@/components/season";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main>
         <p>call list of anime here</p>
         <section className="grid">
+          <Season />
           <Card />
           <Card />
           <Card />
