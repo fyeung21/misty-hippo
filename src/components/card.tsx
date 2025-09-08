@@ -24,8 +24,9 @@ export default function Card() {
           {/* card description on hover */}
           <article className="hidden group-hover:block w-41">
             <p>
-              description Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-              as opposed to using "Content here, content
+              description Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using "Content here,
+              content
             </p>
           </article>
 
