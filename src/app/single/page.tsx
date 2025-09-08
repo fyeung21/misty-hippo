@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function Single() {
   return (
-    <section>
+    <section className="xl:mx-20">
       {/* name of anime */}
-      <h2 className="my-8 text-3xl">name of anime</h2>
+      <h2 className="my-8 text-3xl lg:text-center">name of anime</h2>
 
       {/* main image */}
       <section className="md:flex md:flex-row justify-between">
-        <section className="sm:w-400 sm:mr-8">
+        <section className="h-auto sm:w-400 sm:mr-8 lg:w-600 lg:mx-10">
           <Image
             className="dark:invert"
             src="/next.svg"
