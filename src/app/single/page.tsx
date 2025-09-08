@@ -7,7 +7,7 @@ export default function Single() {
       <h2 className="my-8 text-3xl lg:text-center">name of anime</h2>
 
       {/* main image */}
-      <section className="md:flex md:flex-row justify-between">
+      <article className="md:flex md:flex-row justify-between">
         <section className="h-auto sm:w-400 sm:mr-8 lg:w-600 lg:mx-10">
           <Image
             className="dark:invert"
@@ -38,26 +38,27 @@ export default function Single() {
             
           {/* favourites button */}
           <button className="bg-pink-400">faves</button>
-        </article>
-        <article className="my-8">
-          <p>
+          </article>
+          <article className="my-8">
+            <p>
             description Lorem Ipsum is that it has a more-or-less normal
             distribution of letters, as opposed to using "Content here, content
             here", making it look like readable English. Many desktop publishing
             packages and web page editors now use Lorem Ipsum as their default
             model text, and a search for 'lorem ipsum' will uncover many web
             sites still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose (injected humour
-            and the like).
-          </p>
-        </article>
-        <article>
-          <ul className="flex space-x-2">
-            <li className="bg-yellow-400">adventure</li>
-            <li className="bg-yellow-400">fantasy</li>
-          </ul>
-        </article>
-      </section>
+            years, sometimes by accident, sometimes on purpose injected humour
+            and the like.
+            </p>
+          </article>
+          <article>
+            <ul className="flex space-x-2">
+              <li className="bg-yellow-400">adventure</li>
+              <li className="bg-yellow-400">fantasy</li>
+            </ul>
+          </article>
+        </section>
+      </article>
     </section>
   );
 }
