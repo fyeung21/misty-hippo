@@ -2,39 +2,40 @@ import Image from "next/image";
 
 export default function Single() {
   return (
-    <section className="min-h-screen p-8 pb-20 gap-16">
+    <section className="xl:mx-20">
       {/* name of anime */}
-      <h2 className="my-8 text-3xl">name of anime</h2>
+      <h2 className="my-8 text-3xl lg:text-center">name of anime</h2>
 
       {/* main image */}
-      <section>
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={280}
-          height={400}
-          priority
-        />
-      </section>
+      <section className="md:flex md:flex-row justify-between">
+        <section className="h-auto sm:w-400 sm:mr-8 lg:w-600 lg:mx-10">
+          <Image
+            className="dark:invert"
+            src="/next.svg"
+            alt="Next.js logo"
+            width={280}
+            height={400}
+            priority
+          />
+        </section>
 
-      {/* anime details */}
-      <section>
-        <article className="flex justify-between my-8">
-          <ul>
-            <li>
-              <p>{"12"} episodes airing in</p>
-            </li>
-            <li>
-              <p className="text-xl">October 21, 2025</p>
-            </li>
-            <li>
-              <p>
-                by <span className="text-blue-500">{"name of studio"}</span>
-              </p>
-            </li>
-          </ul>
-
+        {/* anime details */}
+        <section>
+          <article className="flex justify-between my-8">
+            <ul>
+              <li>
+                <p>{"12"} episodes airing in</p>
+              </li>
+              <li>
+                <p className="text-xl">October 21, 2025</p>
+              </li>
+              <li>
+                <p>
+                  by <span className="text-blue-500">{"name of studio"}</span>
+                </p>
+              </li>
+            </ul>
+            
           {/* favourites button */}
           <button className="bg-pink-400">faves</button>
         </article>
