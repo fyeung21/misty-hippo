@@ -5,13 +5,11 @@ import SeasonNav from "./navigation/seasonNav";
 export default function Header() {
   return (
     <header>
-      <section>
+      <nav className="flex flex-row justify-between">
         <Logo />
-        <nav>
-          <SeasonNav />
-          <GeneralNav />
-        </nav>
-      </section>
+        <SeasonNav />
+        <GeneralNav />
+      </nav>
     </header>
   );
 }

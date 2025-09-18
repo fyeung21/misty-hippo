@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function GeneralNav() {
   return (
-    <ul>
+    <ul className="md:flex md:flex-row md:justify-between">
       <Link href="/favourites">
-        <li>favourites</li>
+        <li className="md:mx-2">faves</li>
       </Link>
       <Link href="/user">
-        <li>user</li>
+        <li className="md:ml-2">user</li>
       </Link>
     </ul>
   );
