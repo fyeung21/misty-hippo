@@ -3,9 +3,11 @@ import Logo from "./navigation/logo";
 
 export default function Header() {
   return (
-    <header>
-      <Logo />
-      <HamburgerMenu />
+    <header className="bg-indigo-700">
+      <section className="flex flex-row justify-between px-8 relative">
+        <Logo />
+        <HamburgerMenu />
+      </section>
     </header>
   );
 }

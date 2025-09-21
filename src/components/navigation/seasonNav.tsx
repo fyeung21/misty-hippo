@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export type SeasonNavProps = {
-  seasonName: String;
-  year: Number;
+  seasonName: string;
+  year: number;
 };
 
 export default function SeasonNav() {
@@ -12,11 +14,14 @@ export default function SeasonNav() {
   ];
 
   return (
-    <ul className="md:flex md:flex-row md:justify-between">
-      {seasons.map((season) => (
-        <li className="md:mx-4 flex flex-row">
-          <p>{season.seasonName}</p>
-          <p>{season.year}</p>
+    <ul>
+      {seasons.map((season, id) => (
+        <li key={id} className="bg-indigo-500">
+          <Link href={`${season.seasonName}${season.year}`}>
+            <p className="p-5 text-center capitalize hover:bg-indigo-700">
+              <span>{season.seasonName}</span> <span>{season.year}</span>
+            </p>
+          </Link>
         </li>
       ))}
     </ul>

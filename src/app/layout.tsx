@@ -30,9 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header />
         <section className="font-sans min-h-screen m-8 sm:m-20 xl:mx-30">
           {/* <LargeHeader /> */}
-          <Header />
           <main>{children}</main>
           <Footer />
         </section>
