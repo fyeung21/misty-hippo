@@ -1,15 +1,11 @@
-import GeneralNav from "./navigation/generalNav";
+import HamburgerMenu from "./navigation/hamburgerMenu";
 import Logo from "./navigation/logo";
-import SeasonNav from "./navigation/seasonNav";
 
 export default function Header() {
   return (
     <header>
-      <nav className="flex flex-row justify-between">
-        <Logo />
-        <SeasonNav />
-        <GeneralNav />
-      </nav>
+      <Logo />
+      <HamburgerMenu />
     </header>
   );
 }

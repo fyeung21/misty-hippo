@@ -14,7 +14,10 @@ export default function SeasonNav() {
   return (
     <ul className="md:flex md:flex-row md:justify-between">
       {seasons.map((season) => (
-        <li className="md:mx-4">{`${season.seasonName} ${season.year}`}</li>
+        <li className="md:mx-4 flex flex-row">
+          <p>{season.seasonName}</p>
+          <p>{season.year}</p>
+        </li>
       ))}
     </ul>
   );
