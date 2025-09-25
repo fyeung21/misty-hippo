@@ -31,8 +31,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
+        <LargeHeader />
         <section className="font-sans min-h-screen m-8 sm:m-20 xl:mx-30">
-          {/* <LargeHeader /> */}
           <main>{children}</main>
           <Footer />
         </section>

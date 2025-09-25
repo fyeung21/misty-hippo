@@ -4,8 +4,8 @@ import SeasonNav from "./navigation/seasonNav";
 
 export default function LargeHeader() {
   return (
-    <header>
-      <nav className="flex flex-row justify-between">
+    <header className="hidden bg-indigo-700 lg:block">
+      <nav className="px-14 lg:flex lg:flex-row lg:justify-between xl:px-25">
         <Logo />
         <SeasonNav />
         <GeneralNav />

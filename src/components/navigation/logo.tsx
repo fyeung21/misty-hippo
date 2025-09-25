@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <article>
       <Link href="/">
-        <h1 className="hover:bg-indigo-800 p-4">logo</h1>
+        <h1 className="hover:bg-indigo-800 p-5">logo</h1>
       </Link>
     </article>
   );
