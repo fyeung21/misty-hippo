@@ -14,11 +14,11 @@ export default function SeasonNav() {
   ];
 
   return (
-    <ul>
+    <ul className="lg:flex lg:flex-row">
       {seasons.map((season, id) => (
-        <li key={id} className="bg-indigo-500">
+        <li key={id} className="bg-indigo-500 lg:bg-indigo-700">
           <Link href={`${season.seasonName}${season.year}`}>
-            <p className="p-5 text-center capitalize hover:bg-indigo-700">
+            <p className="p-5 text-center capitalize hover:bg-indigo-700 lg:hover:bg-indigo-800">
               <span>{season.seasonName}</span> <span>{season.year}</span>
             </p>
           </Link>

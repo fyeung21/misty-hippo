@@ -3,6 +3,7 @@
 import GeneralNav from "./generalNav";
 import SeasonNav from "./seasonNav";
 import React, { useState } from "react";
+import { Menu } from "lucide-react";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function HamburgerMenu() {
     <>
       <button onClick={handleClick} className="hover:bg-indigo-800 p-4">
         <p className={isOpen === true ? `text-orange-300` : `text-white`}>
-          ham
+          <Menu />
         </p>
       </button>
       <nav
