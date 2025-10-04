@@ -1,34 +1,34 @@
 import Image from "next/image";
 
 export type CardProps = {
-  name: string;
+  title: string;
   imgSrc: string;
-  airDate: string;
+  // airDate: string;
   numberEpisodes: number;
-  studioName: string;
+  // studioName: string;
   description: string;
   genres: string[];
 };
 
 export default function Card({
-  name,
+  title,
   imgSrc,
-  airDate,
+  // airDate,
   numberEpisodes,
-  studioName,
+  // studioName,
   description,
   genres,
 }: CardProps) {
   return (
     <section>
-      <h2 className="text-2xl">{name}</h2>
+      <h2 className="text-2xl">{title}</h2>
 
       {/* entire card */}
       <article className="bg-blue-400 flex justify-between h-50">
         {/* card image side */}
         <section>
           <Image
-            className="dark:invert"
+            className=""
             src={imgSrc}
             alt="Next.js logo"
             width={180}
@@ -51,11 +51,11 @@ export default function Card({
                 <p>{numberEpisodes} episodes airing in</p>
               </li>
               <li className="text-xl">
-                <p>{airDate}</p>
+                <p>{"airDate"}</p>
               </li>
               <li>
                 <p>
-                  by <span className="text-blue-500">{studioName}</span>
+                  by <span className="text-blue-500">{"studioName"}</span>
                 </p>
               </li>
             </ul>
