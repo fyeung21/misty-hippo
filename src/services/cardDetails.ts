@@ -1,3 +1,5 @@
+import { detailsQuery } from "@/services/detailsQuery";
+
 export type MediaItem = {
   id: number;
   title: {
@@ -15,32 +17,6 @@ export type MediaItem = {
 };
 
 export default async function CardDetails() {
-  const query = `
-    query Query($seasonYear: Int, $sort: [MediaSort], $page: Int, $perPage: Int, $type: MediaType, $season: MediaSeason) {
-      Page(page: $page, perPage: $perPage) {
-        media(seasonYear: $seasonYear, sort: $sort, type: $type, season: $season) {
-          title {
-            english
-            romaji
-            native
-          }
-          id
-          genres
-          description
-          episodes
-          coverImage {
-            color
-            large
-          }
-        }
-        pageInfo {
-          hasNextPage
-          currentPage
-        }
-      }
-    }
-  `;
-
   const variables = {
     season: "FALL",
     seasonYear: 2025,
@@ -56,7 +32,7 @@ export default async function CardDetails() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      query: query,
+      query: detailsQuery,
       variables: variables,
     }),
   });
