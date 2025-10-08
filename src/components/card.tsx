@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { monthFormat } from "@/lib/monthFormat";
 
 export type CardProps = {
   mediaId: number;
@@ -56,7 +57,7 @@ export default function Card({
                 <p>{numberEpisodes} episodes airing in</p>
               </li>
               <li className="text-xl">
-                <p>{`${startDate.month}/${startDate.day}/${startDate.year}`}</p>
+                <p>{`${monthFormat[startDate.month]} ${startDate.day}, ${startDate.year}`}</p>
               </li>
               <li>
                 <p>
