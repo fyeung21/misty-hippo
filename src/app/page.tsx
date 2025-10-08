@@ -7,9 +7,9 @@ export default async function Home() {
 
   return (
     <section className="grid gap-y-10 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-y-16">
-      {data.Page.media.map((media: MediaItem) => (
+      {data.Page.media.map((media: MediaItem, id: number) => (
         <Card
-          key={media.id}
+          key={id}
           title={media.title.english}
           imgSrc={media.coverImage.large}
           // airDate={anime.airDate}
