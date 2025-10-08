@@ -46,7 +46,7 @@ export default function Card({
         <section className="group relative flex-col">
           {/* card description on hover */}
           <article className="hidden group-hover:block w-41">
-            <p>{description}</p>
+            <p dangerouslySetInnerHTML={{ __html: description }} />
           </article>
 
           {/* card details */}
