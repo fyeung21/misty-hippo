@@ -14,7 +14,7 @@ export default function HamburgerMenu() {
 
   return (
     <>
-      <button onClick={handleClick} className="hover:bg-indigo-800 p-4">
+      <button onClick={handleClick} className="p-4 hover:bg-indigo-800">
         <p className={isOpen === true ? `text-orange-300` : `text-white`}>
           <Menu />
         </p>
@@ -22,7 +22,7 @@ export default function HamburgerMenu() {
       <nav
         className={
           isOpen === true
-            ? `absolute z-99 top-14 right-0 left-0 bg-indigo-500 mx-8`
+            ? `absolute top-14 right-0 left-0 z-99 mx-8 bg-indigo-500`
             : `hidden`
         }
       >
