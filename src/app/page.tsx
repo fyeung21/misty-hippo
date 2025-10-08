@@ -6,7 +6,7 @@ export default async function Home() {
   const { data } = await CardDetails();
 
   return (
-    <section className="grid gap-y-10 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-y-16">
+    <section className="grid grid-cols-1 gap-y-10 grid-cols-[175px auto] sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-y-16">
       {data.Page.media.map((media: MediaItem, id: number) => (
         <Card
           key={id}
@@ -16,7 +16,7 @@ export default async function Home() {
           numberEpisodes={media.episodes}
           // studioName={anime.studioName}
           description={media.description}
-          genres={media.genres}
+          genres={media.genres.slice(0, 2)}
         />
       ))}
     </section>

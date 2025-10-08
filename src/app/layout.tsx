@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <Header />
         <LargeHeader />
-        <section className="font-sans min-h-screen m-8 sm:m-20 xl:mx-30">
+        <section className="font-sans min-h-screen mx-4 my-8 sm:m-20 xl:mx-30">
           <main>{children}</main>
           <Footer />
         </section>

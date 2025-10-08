@@ -21,24 +21,23 @@ export default function Card({
 }: CardProps) {
   return (
     <section>
-      <h2 className="text-2xl">{title}</h2>
+      <h2 className="text-2xl truncate text-ellipsis">{title}</h2>
 
       {/* entire card */}
-      <article className="bg-blue-400 flex justify-between h-50">
+      <article className="bg-blue-400 flex justify-between">
         {/* card image side */}
-        <section>
+        <section className="w-[185px] h-[265px] relative">
           <Image
-            className=""
+            className="object-cover"
             src={imgSrc}
-            alt="Next.js logo"
-            width={180}
-            height={300}
+            alt={`thumbnail of ${title}`}
+            fill={true}
             priority
           />
         </section>
 
         {/* card text side */}
-        <section className="group relative flex-col justify-between p-3">
+        <section className="group relative flex-col">
           {/* card description on hover */}
           <article className="hidden group-hover:block w-41">
             <p>{description}</p>
