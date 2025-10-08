@@ -1,21 +1,27 @@
 import Image from "next/image";
 
 export type CardProps = {
+  mediaId: number;
   title: string;
   imgSrc: string;
-  // airDate: string;
+  startDate: {
+    day: number;
+    month: number;
+    year: number;
+  };
   numberEpisodes: number;
-  // studioName: string;
+  studioName: string;
   description: string;
   genres: string[];
 };
 
 export default function Card({
+  mediaId,
   title,
   imgSrc,
-  // airDate,
+  startDate,
   numberEpisodes,
-  // studioName,
+  studioName,
   description,
   genres,
 }: CardProps) {
@@ -50,11 +56,11 @@ export default function Card({
                 <p>{numberEpisodes} episodes airing in</p>
               </li>
               <li className="text-xl">
-                <p>{"airDate"}</p>
+                <p>{`${startDate.month}/${startDate.day}/${startDate.year}`}</p>
               </li>
               <li>
                 <p>
-                  by <span className="text-blue-500">{"studioName"}</span>
+                  by <span className="text-blue-500">{studioName}</span>
                 </p>
               </li>
             </ul>

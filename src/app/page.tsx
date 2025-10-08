@@ -1,6 +1,5 @@
 import Card from "@/components/card";
-import CardDetails from "@/services/cardDetails";
-import { MediaItem } from "@/services/cardDetails";
+import CardDetails, { MediaItem } from "@/services/cardDetails";
 
 export default async function Home() {
   const { data } = await CardDetails();
@@ -10,11 +9,12 @@ export default async function Home() {
       {data.Page.media.map((media: MediaItem, id: number) => (
         <Card
           key={id}
+          mediaId={media.id}
           title={media.title.english}
           imgSrc={media.coverImage.large}
-          // airDate={anime.airDate}
+          startDate={media.startDate}
           numberEpisodes={media.episodes}
-          // studioName={anime.studioName}
+          studioName={media.studios.nodes[0].name}
           description={media.description}
           genres={media.genres.slice(0, 2)}
         />

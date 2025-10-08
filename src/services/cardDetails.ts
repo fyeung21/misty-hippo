@@ -14,6 +14,18 @@ export type MediaItem = {
     color: string;
     large: string; //img url src
   };
+  startDate: {
+    day: number;
+    month: number;
+    year: number;
+  };
+  studios: {
+    nodes: [
+      {
+        name: string;
+      },
+    ];
+  };
 };
 
 export default async function CardDetails() {
@@ -32,7 +44,7 @@ export default async function CardDetails() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      query: detailsQuery,
+      query: detailsQuery, //graphql query
       variables: variables,
     }),
   });
