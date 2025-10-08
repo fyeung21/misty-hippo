@@ -28,12 +28,12 @@ export default function Card({
 }: CardProps) {
   return (
     <section>
-      <h2 className="text-2xl truncate text-ellipsis">{title}</h2>
+      <h2 className="truncate text-2xl text-ellipsis">{title}</h2>
 
       {/* entire card */}
-      <article className="bg-blue-400 flex justify-between">
+      <article className="flex justify-between bg-blue-400">
         {/* card image side */}
-        <section className="w-[185px] h-[265px] relative">
+        <section className="relative h-[265px] w-[185px]">
           <Image
             className="object-cover"
             src={imgSrc}
@@ -46,7 +46,7 @@ export default function Card({
         {/* card text side */}
         <section className="group relative flex-col">
           {/* card description on hover */}
-          <article className="hidden group-hover:block w-41">
+          <article className="hidden w-41 group-hover:block">
             <p dangerouslySetInnerHTML={{ __html: description }} />
           </article>
 

@@ -7,8 +7,8 @@ export default function Single() {
       <h2 className="my-8 text-3xl lg:text-center">name of anime</h2>
 
       {/* main image */}
-      <article className="md:flex md:flex-row justify-between">
-        <section className="h-auto sm:w-400 sm:mr-8 lg:w-600 lg:mx-10">
+      <article className="justify-between md:flex md:flex-row">
+        <section className="h-auto sm:mr-8 sm:w-400 lg:mx-10 lg:w-600">
           <Image
             className="dark:invert"
             src="/next.svg"
@@ -21,7 +21,7 @@ export default function Single() {
 
         {/* anime details */}
         <section>
-          <article className="flex justify-between my-8">
+          <article className="my-8 flex justify-between">
             <ul>
               <li>
                 <p>{"12"} episodes airing in</p>
