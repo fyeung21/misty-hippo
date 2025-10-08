@@ -1,9 +1,15 @@
 import Image from "next/image";
+import { monthFormat } from "@/lib/monthFormat";
 
 export type CardProps = {
-  name: string;
+  mediaId: number;
+  title: string;
   imgSrc: string;
-  airDate: string;
+  startDate: {
+    day: number;
+    month: number;
+    year: number;
+  };
   numberEpisodes: number;
   studioName: string;
   description: string;
@@ -11,9 +17,10 @@ export type CardProps = {
 };
 
 export default function Card({
-  name,
+  mediaId,
+  title,
   imgSrc,
-  airDate,
+  startDate,
   numberEpisodes,
   studioName,
   description,
@@ -21,27 +28,26 @@ export default function Card({
 }: CardProps) {
   return (
     <section>
-      <h2 className="text-2xl">{name}</h2>
+      <h2 className="text-2xl truncate text-ellipsis">{title}</h2>
 
       {/* entire card */}
-      <article className="bg-blue-400 flex justify-between h-50">
+      <article className="bg-blue-400 flex justify-between">
         {/* card image side */}
-        <section>
+        <section className="w-[185px] h-[265px] relative">
           <Image
-            className="dark:invert"
+            className="object-cover"
             src={imgSrc}
-            alt="Next.js logo"
-            width={180}
-            height={300}
+            alt={`thumbnail of ${title}`}
+            fill={true}
             priority
           />
         </section>
 
         {/* card text side */}
-        <section className="group relative flex-col justify-between p-3">
+        <section className="group relative flex-col">
           {/* card description on hover */}
           <article className="hidden group-hover:block w-41">
-            <p>{description}</p>
+            <p dangerouslySetInnerHTML={{ __html: description }} />
           </article>
 
           {/* card details */}
@@ -51,7 +57,7 @@ export default function Card({
                 <p>{numberEpisodes} episodes airing in</p>
               </li>
               <li className="text-xl">
-                <p>{airDate}</p>
+                <p>{`${monthFormat[startDate.month]} ${startDate.day}, ${startDate.year}`}</p>
               </li>
               <li>
                 <p>

@@ -1,41 +1,22 @@
 import Card from "@/components/card";
+import CardDetails, { MediaItem } from "@/services/cardDetails";
 
-export default function Home() {
-  const animeInfo = [
-    {
-      name: "name of anime",
-      imgSrc: "/next.svg",
-      airDate: "October 21, 2025",
-      numberEpisodes: 12,
-      studioName: "studio name",
-      description:
-        "Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &quote Content here, content &quot;",
-      genres: ["adventure", "fantasy"],
-    },
-    {
-      name: "different anime",
-      imgSrc: "/next.svg",
-      airDate: "December 21, 2025",
-      numberEpisodes: 24,
-      studioName: "studio name",
-      description:
-        "Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &quote Content here, content &quot;",
-      genres: ["action", "sports"],
-    },
-  ];
+export default async function Home() {
+  const { data } = await CardDetails();
+
   return (
-    <section className="grid gap-y-10 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-y-16">
-      {/* call list of anime */}
-      {animeInfo.map((anime, id) => (
+    <section className="grid grid-cols-1 gap-y-10 grid-cols-[175px auto] sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-y-16">
+      {data.Page.media.map((media: MediaItem, id: number) => (
         <Card
           key={id}
-          name={anime.name}
-          imgSrc={anime.imgSrc}
-          airDate={anime.airDate}
-          numberEpisodes={anime.numberEpisodes}
-          studioName={anime.studioName}
-          description={anime.description}
-          genres={anime.genres}
+          mediaId={media.id}
+          title={media.title.english}
+          imgSrc={media.coverImage.large}
+          startDate={media.startDate}
+          numberEpisodes={media.episodes}
+          studioName={media.studios.nodes[0].name}
+          description={media.description}
+          genres={media.genres.slice(0, 2)}
         />
       ))}
     </section>
