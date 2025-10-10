@@ -31,9 +31,9 @@ export default function Card({
       <h2 className="truncate text-2xl text-ellipsis">{title}</h2>
 
       {/* entire filled card */}
-      <article className="flex h-62 bg-indigo-900">
+      <article className="flex h-55 flex-row bg-indigo-900">
         {/* card image side */}
-        <section className="relative h-auto w-[185px]">
+        <section className="relative h-auto w-36 shrink-0">
           <Image
             className="object-cover"
             src={imgSrc}
