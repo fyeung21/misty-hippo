@@ -45,30 +45,32 @@ export default function Card({
         </section>
 
         {/* card text side */}
-        <section className="group relative flex h-full w-full flex-col">
-          {/* card description on hover */}
-          <article className="hidden w-41 group-hover:block">
-            <p dangerouslySetInnerHTML={{ __html: description }} />
-          </article>
-          {/* card details */}
-          <article className="m-3 group-hover:hidden">
-            <ul>
-              <li className="text-sm">
-                <p>{`${numberEpisodes} episodes airing in`}</p>
-              </li>
-              <li className="text-xl">
-                <p>{`${monthFormat[startDate.month]} ${startDate.day}, ${startDate.year}`}</p>
-              </li>
-              <li>
-                <p className="text-sm">
-                  by{" "}
-                  <span className="font-semibold text-yellow-500">
-                    {studioName}
-                  </span>
-                </p>
-              </li>
-            </ul>
-          </article>
+        <section className="group relative flex h-full w-full flex-col justify-between">
+          <section>
+            {/* card description on hover */}
+            <article className="hidden w-41 group-hover:block">
+              <p dangerouslySetInnerHTML={{ __html: description }} />
+            </article>
+            {/* card details */}
+            <article className="m-3 group-hover:hidden">
+              <ul>
+                <li className="text-sm">
+                  <p>{`${numberEpisodes} episodes airing in`}</p>
+                </li>
+                <li className="text-xl">
+                  <p>{`${monthFormat[startDate.month]} ${startDate.day}, ${startDate.year}`}</p>
+                </li>
+                <li>
+                  <p className="text-sm">
+                    by{" "}
+                    <span className="font-semibold text-yellow-500">
+                      {studioName}
+                    </span>
+                  </p>
+                </li>
+              </ul>
+            </article>
+          </section>
 
           {/* bottom section of card containing genre and favourites button */}
           <article className="m-3 flex justify-between space-x-4">
