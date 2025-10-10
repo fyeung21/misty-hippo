@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { monthFormat } from "@/lib/monthFormat";
+import { Heart } from "lucide-react";
 
 export type CardProps = {
   mediaId: number;
@@ -78,7 +79,9 @@ export default function Card({
                 </li>
               ))}
             </ul>
-            <button className="bg-pink-400">faves</button>
+            <button>
+              <Heart />
+            </button>
           </article>
         </section>
       </article>
