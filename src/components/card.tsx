@@ -86,7 +86,7 @@ export default function Card({
               ))}
             </ul>
             <button>
-              <Heart />
+              <Heart className="hover:fill-pink-400 hover:stroke-pink-400" />
             </button>
           </article>
         </section>
