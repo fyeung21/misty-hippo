@@ -32,9 +32,9 @@ export default function Card({
       <h2 className="truncate text-2xl text-ellipsis">{title}</h2>
 
       {/* entire filled card */}
-      <article className="flex h-55 flex-row bg-indigo-900">
+      <article className="flex h-55 flex-row rounded-r-sm bg-indigo-900">
         {/* card image side */}
-        <section className="relative h-auto w-36 shrink-0">
+        <section className="relative h-auto w-36 shrink-0 overflow-hidden rounded-l-sm">
           <Image
             className="object-cover"
             src={imgSrc}
@@ -76,7 +76,7 @@ export default function Card({
           </section>
 
           {/* bottom section of card containing genre and favourites button */}
-          <article className="flex justify-between space-x-4 bg-indigo-800 px-3 py-1">
+          <article className="flex justify-between space-x-4 rounded-br-sm bg-indigo-800 px-3 py-1">
             <ul className="flex space-x-2">
               {genres.map((genre, id) => (
                 <li key={id} className="text-indigo-200">
