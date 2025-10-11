@@ -81,6 +81,7 @@ export default function Card({
               {genres.map((genre, id) => (
                 <li key={id} className="text-indigo-200">
                   {genre}
+                  {id < genres.length - 1 ? "," : ""}
                 </li>
               ))}
             </ul>
