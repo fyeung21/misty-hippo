@@ -45,11 +45,14 @@ export default function Card({
         </section>
 
         {/* card text side */}
-        <section className="group relative flex h-full w-full flex-col justify-between">
-          <section>
+        <section className="flex h-full w-full flex-col justify-between">
+          <section className="group relative h-48">
             {/* card description on hover */}
-            <article className="hidden w-41 group-hover:block">
-              <p dangerouslySetInnerHTML={{ __html: description }} />
+            <article className="mt-3 mr-1 ml-3 hidden h-44 overflow-auto group-hover:block">
+              <p
+                dangerouslySetInnerHTML={{ __html: description }}
+                className="pr-1.5 text-sm"
+              />
             </article>
             {/* card details */}
             <article className="m-3 group-hover:hidden">
@@ -73,7 +76,7 @@ export default function Card({
           </section>
 
           {/* bottom section of card containing genre and favourites button */}
-          <article className="m-3 flex justify-between space-x-4">
+          <article className="flex justify-between space-x-4 bg-indigo-800 px-3 py-1">
             <ul className="flex space-x-2">
               {genres.map((genre, id) => (
                 <li key={id} className="text-indigo-200">
