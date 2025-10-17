@@ -22,7 +22,7 @@ export default function HamburgerMenu() {
       <nav
         className={
           isOpen === true
-            ? `absolute top-14 right-0 left-0 z-99 mx-8 bg-indigo-500`
+            ? `absolute top-14 -right-8 z-99 mx-8 bg-indigo-500`
             : `hidden`
         }
       >
