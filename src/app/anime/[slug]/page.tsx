@@ -1,10 +1,16 @@
 import Image from "next/image";
 
-export default function Single() {
+export default async function AnimeSingle({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
   return (
     <section className="xl:mx-20">
       {/* name of anime */}
-      <h2 className="my-8 text-3xl lg:text-center">name of anime</h2>
+      <h2 className="my-8 text-3xl lg:text-center">{slug}</h2>
 
       {/* main image */}
       <article className="justify-between md:flex md:flex-row">
@@ -42,13 +48,7 @@ export default function Single() {
           <article className="my-8">
             <p>
               description Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using "Content here,
-              content here", making it look like readable English. Many desktop
-              publishing packages and web page editors now use Lorem Ipsum as
-              their default model text, and a search for 'lorem ipsum' will
-              uncover many web sites still in their infancy. Various versions
-              have evolved over the years, sometimes by accident, sometimes on
-              purpose injected humour and the like.
+              distribution of letters, as opposed to
             </p>
           </article>
           <article>
