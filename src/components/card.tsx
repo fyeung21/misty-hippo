@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { monthFormat } from "@/lib/monthFormat";
+import { Heart } from "lucide-react";
 
 export type CardProps = {
   mediaId: number;
@@ -30,10 +31,10 @@ export default function Card({
     <section>
       <h2 className="truncate text-2xl text-ellipsis">{title}</h2>
 
-      {/* entire card */}
-      <article className="flex justify-between bg-blue-400">
+      {/* entire filled card */}
+      <article className="flex h-55 flex-row rounded-r-sm bg-indigo-900">
         {/* card image side */}
-        <section className="relative h-[265px] w-[185px]">
+        <section className="relative h-auto w-36 shrink-0 overflow-hidden rounded-l-sm">
           <Image
             className="object-cover"
             src={imgSrc}
@@ -44,39 +45,49 @@ export default function Card({
         </section>
 
         {/* card text side */}
-        <section className="group relative flex-col">
-          {/* card description on hover */}
-          <article className="hidden w-41 group-hover:block">
-            <p dangerouslySetInnerHTML={{ __html: description }} />
-          </article>
-
-          {/* card details */}
-          <article className="group-hover:hidden">
-            <ul className="pb-20">
-              <li className="text-sm">
-                <p>{numberEpisodes} episodes airing in</p>
-              </li>
-              <li className="text-xl">
-                <p>{`${monthFormat[startDate.month]} ${startDate.day}, ${startDate.year}`}</p>
-              </li>
-              <li>
-                <p>
-                  by <span className="text-blue-500">{studioName}</span>
-                </p>
-              </li>
-            </ul>
-          </article>
+        <section className="flex h-full w-full flex-col justify-between">
+          <section className="group relative h-48">
+            {/* card description on hover */}
+            <article className="mt-3 mr-1 ml-3 hidden h-44 overflow-auto group-hover:block">
+              <p
+                dangerouslySetInnerHTML={{ __html: description }}
+                className="pr-1.5 text-sm"
+              />
+            </article>
+            {/* card details */}
+            <article className="m-3 group-hover:hidden">
+              <ul>
+                <li className="text-sm">
+                  <p>{`${numberEpisodes} episodes airing in`}</p>
+                </li>
+                <li className="text-xl">
+                  <p>{`${monthFormat[startDate.month]} ${startDate.day}, ${startDate.year}`}</p>
+                </li>
+                <li>
+                  <p className="text-sm">
+                    by{" "}
+                    <span className="font-semibold text-yellow-500">
+                      {studioName}
+                    </span>
+                  </p>
+                </li>
+              </ul>
+            </article>
+          </section>
 
           {/* bottom section of card containing genre and favourites button */}
-          <article className="flex justify-between space-x-4 justify-self-end">
+          <article className="flex justify-between space-x-4 rounded-br-sm bg-indigo-800 px-3 py-1">
             <ul className="flex space-x-2">
               {genres.map((genre, id) => (
-                <li key={id} className="bg-yellow-400">
+                <li key={id} className="text-indigo-200">
                   {genre}
+                  {id < genres.length - 1 ? "," : ""}
                 </li>
               ))}
             </ul>
-            <button className="bg-pink-400">faves</button>
+            <button>
+              <Heart className="hover:fill-pink-400 hover:stroke-pink-400" />
+            </button>
           </article>
         </section>
       </article>

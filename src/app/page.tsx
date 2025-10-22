@@ -5,7 +5,7 @@ export default async function Home() {
   const { data } = await CardDetails();
 
   return (
-    <section className="grid-cols-[175px auto] grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-y-16">
+    <section className="grid w-full grid-cols-1 justify-center gap-y-6 md:grid-cols-2 md:gap-10 lg:grid-cols-3 lg:gap-y-16">
       {data.Page.media.map((media: MediaItem, id: number) => (
         <Card
           key={id}
