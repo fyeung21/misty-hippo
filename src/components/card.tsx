@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { monthFormat } from "@/lib/monthFormat";
 import FavesButton from "./favesButton";
+import Link from "next/link";
 
 export type CardProps = {
   mediaId: number;
@@ -29,7 +30,11 @@ export default function Card({
 }: CardProps) {
   return (
     <section>
-      <h2 className="truncate text-2xl text-ellipsis">{title}</h2>
+      <Link href={`/anime/${"12345"}`} className="hover:cursor-pointer">
+        <h2 className="truncate text-2xl text-ellipsis hover:text-indigo-500">
+          {title}
+        </h2>
+      </Link>
 
       {/* entire filled card */}
       <article className="flex h-55 flex-row rounded-r-sm bg-indigo-900">
