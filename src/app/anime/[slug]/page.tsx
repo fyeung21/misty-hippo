@@ -10,15 +10,15 @@ export default async function AnimeSingle({
   return (
     <section className="xl:mx-20">
       {/* name of anime */}
-      <h2 className="my-8 text-3xl lg:text-center">{slug}</h2>
+      <h2 className="my-8 text-3xl lg:text-center">{`${slug}: anime title`}</h2>
 
       {/* main image */}
       <article className="justify-between md:flex md:flex-row">
         <section className="h-auto sm:mr-8 sm:w-400 lg:mx-10 lg:w-600">
           <Image
             className="dark:invert"
-            src="/next.svg"
-            alt="Next.js logo"
+            src={"/next.svg"}
+            alt={`Poster image of ${"anime title"}`}
             width={280}
             height={400}
             priority
@@ -33,7 +33,7 @@ export default async function AnimeSingle({
                 <p>{"12"} episodes airing in</p>
               </li>
               <li>
-                <p className="text-xl">October 21, 2025</p>
+                <p className="text-xl">{`${"october"} ${"13"}, ${"2025"}`}</p>
               </li>
               <li>
                 <p>
@@ -47,8 +47,8 @@ export default async function AnimeSingle({
           </article>
           <article className="my-8">
             <p>
-              description Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to
+              {`description Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to`}
             </p>
           </article>
           <article>
