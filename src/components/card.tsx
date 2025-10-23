@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { monthFormat } from "@/lib/monthFormat";
-import { Heart } from "lucide-react";
+import FavesButton from "./favesButton";
 
 export type CardProps = {
   mediaId: number;
@@ -85,9 +85,7 @@ export default function Card({
                 </li>
               ))}
             </ul>
-            <button>
-              <Heart className="hover:fill-pink-400 hover:stroke-pink-400" />
-            </button>
+            <FavesButton />
           </article>
         </section>
       </article>

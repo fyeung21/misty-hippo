@@ -1,3 +1,4 @@
+import FavesButton from "@/components/favesButton";
 import Image from "next/image";
 
 export default async function AnimeSingle({
@@ -43,7 +44,7 @@ export default async function AnimeSingle({
             </ul>
 
             {/* favourites button */}
-            <button className="bg-pink-400">faves</button>
+            <FavesButton />
           </article>
           <article className="my-8">
             <p>
