@@ -1,5 +1,5 @@
-export const AnimeQuery = `
-query AnimeQuery($isMain: Boolean, $mediaId: Int) {
+export const animeQuery = `
+query animeQuery($isMain: Boolean, $mediaId: Int) {
   Media(id: $mediaId) {
     coverImage {
       large
