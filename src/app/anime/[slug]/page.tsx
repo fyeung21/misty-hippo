@@ -19,13 +19,12 @@ export default async function AnimeSingle({
 
       {/* main image */}
       <article className="justify-between md:flex md:flex-row">
-        <section className="h-auto sm:mr-8 sm:w-400 lg:mx-10 lg:w-600">
+        <section className="relative h-auto w-36 overflow-hidden sm:mr-8 sm:w-400">
           <Image
-            className="dark:invert"
+            className="object-cover"
             src={anime.coverImage.large}
             alt={`Poster image of ${anime.title.english ? anime.title.english : anime.title.romaji}`}
-            width={280}
-            height={400}
+            fill={true}
             priority
           />
         </section>
