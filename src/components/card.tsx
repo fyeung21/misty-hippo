@@ -63,7 +63,10 @@ export default function Card({
             <article className="m-3 group-hover:hidden">
               <ul>
                 <li className="text-sm">
-                  <p>{`${numberEpisodes} episodes airing in`}</p>
+                  <p>
+                    {numberEpisodes ? `${numberEpisodes} e` : "E"}pisodes airing
+                    in
+                  </p>
                 </li>
                 <li className="text-xl">
                   <p>{`${monthFormat[startDate.month]} ${startDate.day}, ${startDate.year}`}</p>
