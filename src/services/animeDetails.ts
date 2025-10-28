@@ -1,6 +1,6 @@
 import { animeQuery } from "@/services/animeQuery";
 
-export type MediaItem = {
+export type Anime = {
   title: {
     english: string;
     romaji: string;
@@ -30,9 +30,9 @@ export type MediaItem = {
   };
 };
 
-export default async function CardDetails() {
+export default async function AnimeDetails(slug: number): Promise<Anime> {
   const variables = {
-    mediaId: "[slug]",
+    mediaId: slug,
   };
 
   const data = await fetch("https://graphql.anilist.co", {

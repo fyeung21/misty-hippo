@@ -1,12 +1,14 @@
 import FavesButton from "@/components/favesButton";
 import Image from "next/image";
+import AnimeDetails from "@/services/animeDetails";
 
 export default async function AnimeSingle({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: number }>;
 }) {
   const { slug } = await params;
+  const data = await AnimeDetails(slug);
 
   return (
     <section className="xl:mx-20">

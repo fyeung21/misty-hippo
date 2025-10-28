@@ -30,7 +30,7 @@ export default function Card({
 }: CardProps) {
   return (
     <section>
-      <Link href={`/anime/${"12345"}`} className="hover:cursor-pointer">
+      <Link href={`/anime/${mediaId}`} className="hover:cursor-pointer">
         <h2 className="truncate text-2xl text-ellipsis hover:text-indigo-500">
           {title}
         </h2>
