@@ -2,7 +2,7 @@ import { animeQuery } from "@/services/animeQuery";
 
 export type Anime = {
   title: {
-    english: string;
+    english?: string;
     romaji: string;
     native: string;
   };
@@ -11,7 +11,7 @@ export type Anime = {
     large: string; //img url src
   };
   description: string;
-  episodes: number;
+  episodes?: number;
   genres: string[];
   season: string;
   seasonYear: number;
@@ -30,7 +30,7 @@ export type Anime = {
   };
 };
 
-export default async function AnimeDetails(slug: number): Promise<Anime> {
+export default async function AnimeDetails(slug: number) {
   const variables = {
     mediaId: slug,
   };

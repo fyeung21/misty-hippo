@@ -1,6 +1,7 @@
 import FavesButton from "@/components/favesButton";
 import Image from "next/image";
 import AnimeDetails from "@/services/animeDetails";
+import { monthFormat } from "@/lib/monthFormat";
 
 export default async function AnimeSingle({
   params,
@@ -8,20 +9,21 @@ export default async function AnimeSingle({
   params: Promise<{ slug: number }>;
 }) {
   const { slug } = await params;
-  const data = await AnimeDetails(slug);
+  const { data } = await AnimeDetails(slug);
+  const anime = data.Media;
 
   return (
     <section className="xl:mx-20">
       {/* name of anime */}
-      <h2 className="my-8 text-3xl lg:text-center">{`${slug}: anime title`}</h2>
+      <h2 className="my-8 text-3xl lg:text-center">{`${slug}: ${anime.title.english ? anime.title.english : anime.title.romaji}`}</h2>
 
       {/* main image */}
       <article className="justify-between md:flex md:flex-row">
         <section className="h-auto sm:mr-8 sm:w-400 lg:mx-10 lg:w-600">
           <Image
             className="dark:invert"
-            src={"/next.svg"}
-            alt={`Poster image of ${"anime title"}`}
+            src={anime.coverImage.large}
+            alt={`Poster image of ${anime.title.english ? anime.title.english : anime.title.romaji}`}
             width={280}
             height={400}
             priority
@@ -33,14 +35,20 @@ export default async function AnimeSingle({
           <article className="my-8 flex justify-between">
             <ul>
               <li>
-                <p>{"12"} episodes airing in</p>
+                <p>
+                  {anime.episodes ? `${anime.episodes} e` : "E"}pisodes airing
+                  in
+                </p>
               </li>
               <li>
-                <p className="text-xl">{`${"october"} ${"13"}, ${"2025"}`}</p>
+                <p>{`${monthFormat[anime.startDate.month]} ${anime.startDate.day}, ${anime.startDate.year}`}</p>
               </li>
               <li>
                 <p>
-                  by <span className="text-blue-500">{"name of studio"}</span>
+                  by{" "}
+                  <span className="text-blue-500">
+                    {anime.studios.nodes[0].name}
+                  </span>
                 </p>
               </li>
             </ul>
@@ -49,15 +57,16 @@ export default async function AnimeSingle({
             <FavesButton />
           </article>
           <article className="my-8">
-            <p>
-              {`description Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to`}
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: anime.description }} />
           </article>
           <article>
             <ul className="flex space-x-2">
-              <li className="bg-yellow-400">adventure</li>
-              <li className="bg-yellow-400">fantasy</li>
+              {anime.genres.map((genre: string, id: number) => (
+                <li key={id} className="text-indigo-200">
+                  {genre}
+                  {id < anime.genres.length - 1 ? "," : ""}
+                </li>
+              ))}
             </ul>
           </article>
         </section>
