@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { monthFormat } from "@/lib/monthFormat";
-import FavesButton from "./favesButton";
+import FavesButton from "@/components/favesButton";
 import Link from "next/link";
 
 export type CardProps = {
