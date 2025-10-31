@@ -1,12 +1,12 @@
 import Card from "@/components/card";
-import CardDetails, { MediaItem } from "@/services/cardDetails";
+import CardDetails from "@/services/cardDetails";
 
 export default async function Home() {
   const { data } = await CardDetails();
 
   return (
     <section className="grid w-full grid-cols-1 justify-center gap-y-6 md:grid-cols-2 md:gap-10 lg:grid-cols-3 lg:gap-y-16">
-      {data.Page.media.map((media: MediaItem, id: number) => (
+      {data.Page.media.map((media, id) => (
         <Card
           key={id}
           mediaId={media.id}

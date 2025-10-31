@@ -1,19 +1,21 @@
-import { detailsQuery } from "@/services/detailsQuery";
+import { animeQuery } from "@/services/animeQuery";
 
-export type PageMedia = {
-  id: number;
+export type Media = {
   title: {
-    english: string;
+    english?: string;
     romaji: string;
     native: string;
   };
-  genres: string[];
-  description: string;
-  episodes: number;
   coverImage: {
     color: string;
     large: string; //img url src
   };
+  description: string;
+  episodes?: number;
+  genres: string[];
+  season: string;
+  seasonYear: number;
+  source: string;
   startDate: {
     day: number;
     month: number;
@@ -29,25 +31,19 @@ export type PageMedia = {
 };
 
 //defining types for the nested data object from api
-type Page = {
-  media: PageMedia[];
-};
 type ResponseData = {
-  Page: Page;
+  Media: Media;
 };
 type QueryResponse = {
   data: ResponseData;
 };
 
 //api call
-export default async function CardDetails(): Promise<QueryResponse> {
+export default async function AnimeDetails(
+  slug: number,
+): Promise<QueryResponse> {
   const variables = {
-    season: "FALL",
-    seasonYear: 2025,
-    sort: "POPULARITY_DESC",
-    page: 1,
-    perPage: 9,
-    type: "ANIME",
+    mediaId: slug,
   };
 
   const data = await fetch("https://graphql.anilist.co", {
@@ -56,7 +52,7 @@ export default async function CardDetails(): Promise<QueryResponse> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      query: detailsQuery, //graphql query
+      query: animeQuery, //graphql query
       variables: variables,
     }),
   });
