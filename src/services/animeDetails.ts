@@ -31,11 +31,10 @@ export type Media = {
 };
 
 //defining types for the nested data object from api
-export type ResponseData = {
+type ResponseData = {
   Media: Media;
 };
-
-export type QueryResponse = {
+type QueryResponse = {
   data: ResponseData;
 };
 
