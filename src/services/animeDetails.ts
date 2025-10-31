@@ -1,6 +1,6 @@
 import { animeQuery } from "@/services/animeQuery";
 
-export type Anime = {
+export type Media = {
   title: {
     english?: string;
     romaji: string;
@@ -30,7 +30,19 @@ export type Anime = {
   };
 };
 
-export default async function AnimeDetails(slug: number) {
+//defining types for the nested data object from api
+export type ResponseData = {
+  Media: Media;
+};
+
+export type QueryResponse = {
+  data: ResponseData;
+};
+
+//api call
+export default async function AnimeDetails(
+  slug: number,
+): Promise<QueryResponse> {
   const variables = {
     mediaId: slug,
   };
