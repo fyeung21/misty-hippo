@@ -1,6 +1,6 @@
 import { detailsQuery } from "@/services/detailsQuery";
 
-export type MediaItem = {
+export type PageMedia = {
   id: number;
   title: {
     english: string;
@@ -28,7 +28,19 @@ export type MediaItem = {
   };
 };
 
-export default async function CardDetails() {
+//defining types for the nested data object from api
+type Page = {
+  media: PageMedia[];
+};
+type ResponseData = {
+  Page: Page;
+};
+type QueryResponse = {
+  data: ResponseData;
+};
+
+//api call
+export default async function CardDetails(): Promise<QueryResponse> {
   const variables = {
     season: "FALL",
     seasonYear: 2025,
