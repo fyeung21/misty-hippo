@@ -56,23 +56,23 @@ export default function Card({
             <article className="mt-3 mr-1 ml-3 hidden h-44 overflow-auto group-hover:block">
               <p
                 dangerouslySetInnerHTML={{ __html: description }}
-                className="pr-1.5 text-sm"
+                className="pr-1.5 text-sm md:text-base"
               />
             </article>
             {/* card details */}
             <article className="m-3 group-hover:hidden">
               <ul>
-                <li className="text-sm">
+                <li className="text-sm md:text-base">
                   <p>
                     {numberEpisodes ? `${numberEpisodes} e` : "E"}pisodes airing
                     in
                   </p>
                 </li>
-                <li className="text-xl">
+                <li className="text-xl md:text-xl">
                   <p>{`${monthFormat[startDate.month]} ${startDate.day}, ${startDate.year}`}</p>
                 </li>
                 <li>
-                  <p className="text-sm">
+                  <p className="text-sm md:text-base">
                     by{" "}
                     <span className="font-semibold text-yellow-500">
                       {studioName}
