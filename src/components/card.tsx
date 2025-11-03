@@ -5,7 +5,11 @@ import Link from "next/link";
 
 export type CardProps = {
   mediaId: number;
-  title: string;
+  title: {
+    english?: string;
+    romaji: string;
+    native: string;
+  };
   imgSrc: string;
   startDate: {
     day: number;
@@ -32,7 +36,7 @@ export default function Card({
     <section>
       <Link href={`/anime/${mediaId}`} className="hover:cursor-pointer">
         <h2 className="truncate text-2xl text-ellipsis hover:text-indigo-500">
-          {title}
+          {title.english ? title.english : title.romaji}
         </h2>
       </Link>
 

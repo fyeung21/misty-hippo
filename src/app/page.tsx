@@ -10,7 +10,7 @@ export default async function Home() {
         <Card
           key={id}
           mediaId={media.id}
-          title={media.title.english}
+          title={media.title}
           imgSrc={media.coverImage.large}
           startDate={media.startDate}
           numberEpisodes={media.episodes}
