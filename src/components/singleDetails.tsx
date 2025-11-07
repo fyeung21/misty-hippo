@@ -5,7 +5,7 @@ import FavesButton from "@/components/favesButton";
 export type SingleDetailsProps = {
   imgSrc: string;
   description: string;
-  numberEpisodes: number;
+  numberEpisodes?: number;
   genres: string[];
   season: string;
   seasonYear: number;

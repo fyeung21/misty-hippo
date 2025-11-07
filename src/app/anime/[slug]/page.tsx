@@ -1,4 +1,4 @@
-import SingleDetails from "@/components/animeDetails";
+import SingleDetails from "@/components/singleDetails";
 import AnimeDetails from "@/services/animeDetails";
 
 export default async function AnimeSingle({
@@ -9,7 +9,7 @@ export default async function AnimeSingle({
   const { slug } = await params;
   const { data } = await AnimeDetails(slug);
   const anime = data.Media;
-
+  console.log(anime.episodes);
   return (
     <section className="xl:mx-20">
       <SingleDetails
