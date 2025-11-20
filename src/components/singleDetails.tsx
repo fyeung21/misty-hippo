@@ -40,8 +40,9 @@ export default function SingleDetails({
       <h2 className="my-8 text-3xl lg:text-center">{`${title.english ? title.english : title.romaji}`}</h2>
 
       {/* main image */}
-      <article className="justify-between md:flex md:flex-row">
-        <section className="relative h-auto w-36 overflow-hidden sm:mr-8 sm:w-400">
+      <article>
+        {/* <section className="relative h-auto w-36 overflow-hidden sm:mr-8 sm:w-400"> */}
+        <section className="relative h-100 w-auto">
           <Image
             className="object-cover"
             src={imgSrc}
