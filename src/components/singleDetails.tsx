@@ -31,6 +31,8 @@ export default function SingleDetails({
   studioName,
   genres,
   title,
+  season,
+  seasonYear,
 }: SingleDetailsProps) {
   return (
     <>
@@ -84,6 +86,7 @@ export default function SingleDetails({
                 </li>
               ))}
             </ul>
+            <p>{`${season} ${seasonYear}`}</p>
           </article>
         </section>
       </article>
