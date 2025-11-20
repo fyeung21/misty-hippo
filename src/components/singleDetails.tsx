@@ -40,8 +40,8 @@ export default function SingleDetails({
       <h2 className="my-8 text-3xl lg:text-center">{`${title.english ? title.english : title.romaji}`}</h2>
 
       {/* main image */}
-      <article className="sm:flex sm:flex-row sm:justify-between">
-        <section className="relative h-100 w-auto sm:mr-5 sm:max-h-400 sm:w-400">
+      <article className="sm:flex sm:h-screen sm:flex-row sm:justify-between">
+        <section className="relative h-100 w-auto sm:mr-5 sm:h-125 sm:w-2/5">
           <Image
             className="object-cover"
             src={imgSrc}
@@ -52,7 +52,7 @@ export default function SingleDetails({
         </section>
 
         {/* anime details */}
-        <section>
+        <section className="sm:w-4/5">
           <article className="my-8 flex justify-between">
             <ul>
               <li>
