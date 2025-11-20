@@ -35,7 +35,7 @@ export default function SingleDetails({
   seasonYear,
 }: SingleDetailsProps) {
   return (
-    <>
+    <section className="lg:mx-20 xl:mx-0">
       {/* name of anime */}
       <h2 className="my-8 text-3xl lg:text-center">{`${title.english ? title.english : title.romaji}`}</h2>
 
@@ -90,6 +90,6 @@ export default function SingleDetails({
           </article>
         </section>
       </article>
-    </>
+    </section>
   );
 }
