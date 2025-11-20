@@ -77,7 +77,7 @@ export default function SingleDetails({
           <article className="my-8">
             <p dangerouslySetInnerHTML={{ __html: description }} />
           </article>
-          <article>
+          <article className="flex justify-between text-orange-300">
             <ul className="flex space-x-2">
               {genres.map((genre: string, id: number) => (
                 <li key={id} className="text-indigo-200">
